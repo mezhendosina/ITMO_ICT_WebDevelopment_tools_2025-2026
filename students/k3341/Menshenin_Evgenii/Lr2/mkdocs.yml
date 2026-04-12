@@ -1,0 +1,11 @@
+site_name: "Menshenin Evgenii — Лабораторная работа 2"
+site_dir: site
+
+theme:
+  name: readthedocs
+
+nav:
+  - Отчёт: index.md
+
+markdown_extensions:
+  - tables

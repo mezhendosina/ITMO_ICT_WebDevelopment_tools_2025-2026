@@ -6,6 +6,7 @@
 **/.env.local
 
 .venv/
+**/.venv/
 venv/
 env/
 
@@ -23,6 +24,9 @@ build/
 .coverage
 htmlcov/
 coverage.xml
+
+# mkdocs output (Lab 2)
+Lr2/site/
 
 *.db
 *.sqlite3

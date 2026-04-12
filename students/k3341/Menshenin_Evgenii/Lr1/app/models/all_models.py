@@ -31,3 +31,4 @@ from app.models.evaluation import (
     EvaluationUpdate,
     EvaluationRead,
 )
+from app.models.parsed_page import ParsedPage  # noqa: F401 — Lab 2 parsing table
