@@ -90,7 +90,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tasks">Задачи (/tasks)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#submissions">提交 (/submissions)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#submissions">Решения (/submissions)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#evaluations">Оценки (/evaluations)</a>
     </li>
@@ -108,7 +108,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#task">Task (Задача)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#submission">Submission (提交)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#submission">Submission</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#evaluation">Evaluation (Оценка)</a>
     </li>
@@ -595,7 +595,7 @@ def get_session():
 </tr>
 </tbody>
 </table>
-<h4 id="submissions">提交 (<code>/submissions</code>)</h4>
+<h4 id="submissions">Решения (<code>/submissions</code>)</h4>
 <table>
 <thead>
 <tr>
@@ -608,42 +608,42 @@ def get_session():
 <tr>
 <td>GET</td>
 <td><code>/submissions</code></td>
-<td>Получить все提交ы</td>
+<td>Получить все решения</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/submissions/user/{user_id}</code></td>
-<td>Получить提交ы пользователя</td>
+<td>Получить решения пользователя</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/submissions/task/{task_id}</code></td>
-<td>Получить提交ы по задаче</td>
+<td>Получить решения по задаче</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/submissions/team/{team_id}</code></td>
-<td>Получить提交ы команды</td>
+<td>Получить решения команды</td>
 </tr>
 <tr>
 <td>GET</td>
 <td><code>/submissions/{submission_id}</code></td>
-<td>Получить提交 по ID</td>
+<td>Получить решение по ID</td>
 </tr>
 <tr>
 <td>POST</td>
 <td><code>/submissions</code></td>
-<td>Создать новый提交</td>
+<td>Создать новое решение</td>
 </tr>
 <tr>
 <td>PATCH</td>
 <td><code>/submissions/{submission_id}</code></td>
-<td>Обновить提交</td>
+<td>Обновить решение</td>
 </tr>
 <tr>
 <td>DELETE</td>
 <td><code>/submissions/{submission_id}</code></td>
-<td>Удалить提交</td>
+<td>Удалить решение</td>
 </tr>
 </tbody>
 </table>
@@ -665,7 +665,7 @@ def get_session():
 <tr>
 <td>GET</td>
 <td><code>/evaluations/submission/{submission_id}</code></td>
-<td>Получить оценки提交а</td>
+<td>Получить оценки</td>
 </tr>
 <tr>
 <td>GET</td>
@@ -781,7 +781,7 @@ class Task(TaskBase, table=True):
     hackathon: &quot;Hackathon&quot; = Relationship(back_populates=&quot;tasks&quot;)
     submissions: list[&quot;Submission&quot;] = Relationship(back_populates=&quot;task&quot;)
 </code></pre>
-<h4 id="submission">Submission (提交)</h4>
+<h4 id="submission">Submission</h4>
 <pre><code class="language-python"># app/models/submission.py
 class SubmissionBase(SQLModel):
     description: str
