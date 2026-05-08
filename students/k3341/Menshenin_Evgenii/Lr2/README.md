@@ -15,11 +15,9 @@ Options: `-n/--upper` (default `10000000000000`), `-w/--workers`.
 ## Task 2 — parse titles into Lab 1 database
 
 1. Configure `../Lr1/.env` with `DATABASE_URL`, apply migrations from `../Lr1`:
-
-   ```bash
+  ```bash
    cd ../Lr1 && alembic upgrade head && cd ../Lr2
-   ```
-
+  ```
 2. Install Lab 1 dependencies (includes `requests`, `beautifulsoup4`, `aiohttp`).
 
 ```bash
