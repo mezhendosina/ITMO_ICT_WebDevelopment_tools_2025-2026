@@ -1,24 +1,9 @@
 # Отчет по лабораторной работе
 
 
-## Репозиторий
-
-Весь код доступен в GitHub репозитории: [https://github.com/mezhendosina/ITMO_ICT_WebDevelopment_tools_2025-2026_lab1](https://github.com/mezhendosina/ITMO_ICT_WebDevelopment_tools_2025-2026_lab1)
-
-Структура проекта:
-```
-students/k3341/Menshenin_Evgenii/
-├── Lr1/           # Лабораторная работа 1 - полноценное API
-├── prak/pr1/      # Практика 1.1 - временная БД
-├── prak/pr2/      # Практика 1.2 - ORM
-└── prak/pr3/      # Практика 1.3 - Alembic миграции
-```
-
----
-
 ## Практика 1.1 — Воины (временная БД)
 
-**Папка**: [`students/k3341/Menshenin_Evgenii/prak/pr1/`](students/k3341/Menshenin_Evgenii/prak/pr1/)
+**Папка**: `../../prak/pr1/`
 
 ### Реализованные эндпоинты
 
@@ -82,7 +67,7 @@ temp_bd: list[dict] = [
 
 ## Практика 1.2 — Воины (ORM)
 
-**Папка**: [`students/k3341/Menshenin_Evgenii/prak/pr2/`](students/k3341/Menshenin_Evgenii/prak/pr2/)
+**Папка**: `prak/pr2/`
 
 ### Реализованные эндпоинты
 
@@ -152,7 +137,7 @@ def get_session():
 
 ## Практика 1.3 — Alembic миграции
 
-**Папка**: [`students/k3341/Menshenin_Evgenii/prak/pr3/`](students/k3341/Menshenin_Evgenii/prak/pr3/)
+**Папка**: `prak/pr3/`
 
 ### Структура
 
@@ -178,7 +163,7 @@ def get_session():
 
 ## Лабораторная работа 1 — Система управления хакатонами
 
-**Папка**: [`students/k3341/Menshenin_Evgenii/Lr1/`](students/k3341/Menshenin_Evgenii/Lr1/)
+**Папка**: `Lr1/`
 
 Полноценное REST API для системы управления хакатонами с аутентификацией JWT.
 
@@ -240,30 +225,118 @@ def get_session():
 | PATCH | `/tasks/{task_id}` | Обновить задачу |
 | DELETE | `/tasks/{task_id}` | Удалить задачу |
 
-####提交 (`/submissions`)
+#### Решения (`/submissions`)
 
 | Метод | Путь | Описание |
 |-------|------|----------|
-| GET | `/submissions` | Получить все提交ы |
-| GET | `/submissions/user/{user_id}` | Получить提交ы пользователя |
-| GET | `/submissions/task/{task_id}` | Получить提交ы по задаче |
-| GET | `/submissions/team/{team_id}` | Получить提交ы команды |
-| GET | `/submissions/{submission_id}` | Получить提交 по ID |
-| POST | `/submissions` | Создать новый提交 |
-| PATCH | `/submissions/{submission_id}` | Обновить提交 |
-| DELETE | `/submissions/{submission_id}` | Удалить提交 |
+| GET | `/submissions` | Получить все решения |
+| GET | `/submissions/user/{user_id}` | Получить решения пользователя |
+| GET | `/submissions/task/{task_id}` | Получить решения по задаче |
+| GET | `/submissions/team/{team_id}` | Получить решения команды |
+| GET | `/submissions/{submission_id}` | Получить решение по ID |
+| POST | `/submissions` | Создать новое решение |
+| PATCH | `/submissions/{submission_id}` | Обновить решение |
+| DELETE | `/submissions/{submission_id}` | Удалить решение |
 
 #### Оценки (`/evaluations`)
 
 | Метод | Путь | Описание |
 |-------|------|----------|
 | GET | `/evaluations` | Получить все оценки |
-| GET | `/evaluations/submission/{submission_id}` | Получить оценки提交а |
+| GET | `/evaluations/submission/{submission_id}` | Получить оценки |
 | GET | `/evaluations/evaluator/{evaluator_id}` | Получить оценки оценщика |
 | GET | `/evaluations/{evaluation_id}` | Получить оценку по ID |
 | POST | `/evaluations` | Создать новую оценку |
 | PATCH | `/evaluations/{evaluation_id}` | Обновить оценку |
 | DELETE | `/evaluations/{evaluation_id}` | Удалить оценку |
+
+### Схема базы данных (ERD)
+
+```mermaid
+erDiagram
+    USER {
+        int id PK
+        string email
+        string full_name
+        string hashed_password
+        string phone
+        string skills
+    }
+
+    HACKATHON {
+        int id PK
+        int organizer_id FK
+        string title
+        string description
+        datetime start_date
+        datetime end_date
+        int max_participants
+        datetime created_at
+    }
+
+    PARTICIPANT {
+        int id PK
+        int user_id FK
+        int hackathon_id FK
+        int team_id FK
+        string role
+        datetime registered_at
+    }
+
+    TEAM {
+        int id PK
+        int hackathon_id FK
+        int creator_id FK
+        string name
+        string description
+        datetime created_at
+    }
+
+    TASK {
+        int id PK
+        int hackathon_id FK
+        string title
+        string description
+        string requirements
+        string criteria
+        int max_score
+    }
+
+    SUBMISSION {
+        int id PK
+        int user_id FK
+        int task_id FK
+        int team_id FK
+        string description
+        string project_link
+        datetime submitted_at
+    }
+
+    EVALUATION {
+        int id PK
+        int submission_id FK
+        int evaluator_id FK
+        int score
+        string comments
+    }
+
+    USER ||--o{ HACKATHON : "organizes"
+    USER ||--o{ PARTICIPANT : "participates as"
+    USER ||--o{ TEAM : "creates"
+    USER ||--o{ SUBMISSION : "submits"
+    USER ||--o{ EVALUATION : "evaluates"
+
+    HACKATHON ||--o{ PARTICIPANT : "has"
+    HACKATHON ||--o{ TEAM : "has"
+    HACKATHON ||--o{ TASK : "has"
+
+    TEAM ||--o{ PARTICIPANT : "contains"
+    TEAM ||--o{ SUBMISSION : "has"
+
+    TASK ||--o{ SUBMISSION : "receives"
+
+    SUBMISSION ||--o{ EVALUATION : "receives"
+```
 
 ### Модели данных
 
@@ -368,7 +441,7 @@ class Task(TaskBase, table=True):
     submissions: list["Submission"] = Relationship(back_populates="task")
 ```
 
-#### Submission (提交)
+#### Submission
 
 ```python
 # app/models/submission.py
