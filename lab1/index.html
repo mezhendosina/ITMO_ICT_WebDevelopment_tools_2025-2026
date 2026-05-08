@@ -1,158 +1,153 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+
+<html class="writer-html5" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Лабораторная 1 - Menshenin Evgenii — Лабораторные работы</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-    
-      <script>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../img/favicon.ico" rel="shortcut icon"/>
+<title>Лабораторная 1 - Menshenin Evgenii — Лабораторные работы</title>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
         // Current page data
         var mkdocs_page_name = "\u041b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043d\u0430\u044f 1";
         var mkdocs_page_input_path = "lab1.md";
         var mkdocs_page_url = null;
       </script>
-    
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </head>
-
 <body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Menshenin Evgenii — Лабораторные работы
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href=".."> Menshenin Evgenii — Лабораторные работы
         </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
-  </form>
+<form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
 </div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Главная</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Лабораторная 1</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_2">Репозиторий</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#11">Практика 1.1 — Воины (временная БД)</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">Реализованные эндпоинты</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">Модели данных</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_5">Код соединения с БД</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#12-orm">Практика 1.2 — Воины (ORM)</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">Реализованные эндпоинты</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">Модели данных</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_8">Код соединения с БД</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#13-alembic">Практика 1.3 — Alembic миграции</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_9">Структура</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_10">Код соединения с БД</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#1">Лабораторная работа 1 — Система управления хакатонами</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_11">Реализованные эндпоинты</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#auth">Аутентификация (/auth)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hackathons">Хакатоны (/hackathons)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#participants">Участники (/participants)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#teams">Команды (/teams)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#tasks">Задачи (/tasks)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#submissions">Решения (/submissions)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#evaluations">Оценки (/evaluations)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_12">Модели данных</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#user">User (Пользователь)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#hackathon">Hackathon (Хакатон)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#participant">Participant (Участник)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#team">Team (Команда)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#task">Task (Задача)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#submission">Submission</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#evaluation">Evaluation (Оценка)</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_13">Код соединения с БД</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_14">Конфигурация</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#jwt">JWT Аутентификация</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../lab2/">Лабораторная 2</a>
-                </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Menshenin Evgenii — Лабораторные работы</a>
-        
-      </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Лабораторная 1</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
-                <h1 id="_1">Отчет по лабораторной работе</h1>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="..">Главная</a>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Лабораторная 1</a>
+<ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#_2">Репозиторий</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#11">Практика 1.1 — Воины (временная БД)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#_3">Реализованные эндпоинты</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_4">Модели данных</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_5">Код соединения с БД</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#12-orm">Практика 1.2 — Воины (ORM)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#_6">Реализованные эндпоинты</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_7">Модели данных</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_8">Код соединения с БД</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#13-alembic">Практика 1.3 — Alembic миграции</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#_9">Структура</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_10">Код соединения с БД</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#1">Лабораторная работа 1 — Система управления хакатонами</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#_11">Реализованные эндпоинты</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#auth">Аутентификация (/auth)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#hackathons">Хакатоны (/hackathons)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#participants">Участники (/participants)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#teams">Команды (/teams)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#tasks">Задачи (/tasks)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#submissions">Решения (/submissions)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluations">Оценки (/evaluations)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#erd">Схема базы данных (ERD)</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_12">Модели данных</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#user">User (Пользователь)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#hackathon">Hackathon (Хакатон)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#participant">Participant (Участник)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#team">Team (Команда)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#task">Task (Задача)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#submission">Submission</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation">Evaluation (Оценка)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_13">Код соединения с БД</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_14">Конфигурация</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#jwt">JWT Аутентификация</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lab2/">Лабораторная 2</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="..">Menshenin Evgenii — Лабораторные работы</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href=".."></a></li>
+<li class="breadcrumb-item active">Лабораторная 1</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="_1">Отчет по лабораторной работе</h1>
 <h2 id="_2">Репозиторий</h2>
 <p>Весь код доступен в GitHub репозитории: <a href="https://github.com/mezhendosina/ITMO_ICT_WebDevelopment_tools_2025-2026_lab1">https://github.com/mezhendosina/ITMO_ICT_WebDevelopment_tools_2025-2026_lab1</a></p>
 <p>Структура проекта:</p>
@@ -162,7 +157,7 @@
 ├── prak/pr2/      # Практика 1.2 - ORM
 └── prak/pr3/      # Практика 1.3 - Alembic миграции
 </code></pre>
-<hr />
+<hr/>
 <h2 id="11">Практика 1.1 — Воины (временная БД)</h2>
 <p><strong>Папка</strong>: <a href="students/k3341/Menshenin_Evgenii/prak/pr1/"><code>students/k3341/Menshenin_Evgenii/prak/pr1/</code></a></p>
 <h3 id="_3">Реализованные эндпоинты</h3>
@@ -215,9 +210,9 @@
 <h3 id="_4">Модели данных</h3>
 <pre><code class="language-python"># models.py
 class RaceType(str, Enum):
-    director = &quot;director&quot;
-    manager = &quot;manager&quot;
-    accountant = &quot;accountant&quot;
+    director = "director"
+    manager = "manager"
+    accountant = "accountant"
 
 class Profession(BaseModel):
     id: int
@@ -242,16 +237,16 @@ class Warrior(BaseModel):
 <pre><code class="language-python"># main.py (фрагмент)
 temp_bd: list[dict] = [
     {
-        &quot;id&quot;: 1,
-        &quot;race&quot;: &quot;director&quot;,
-        &quot;name&quot;: &quot;Мартынов Дмитрий&quot;,
-        &quot;level&quot;: 12,
-        &quot;profession&quot;: {...},
-        &quot;skills&quot;: [...],
+        "id": 1,
+        "race": "director",
+        "name": "Мартынов Дмитрий",
+        "level": 12,
+        "profession": {...},
+        "skills": [...],
     },
 ]
 </code></pre>
-<hr />
+<hr/>
 <h2 id="12-orm">Практика 1.2 — Воины (ORM)</h2>
 <p><strong>Папка</strong>: <a href="students/k3341/Menshenin_Evgenii/prak/pr2/"><code>students/k3341/Menshenin_Evgenii/prak/pr2/</code></a></p>
 <h3 id="_6">Реализованные эндпоинты</h3>
@@ -314,9 +309,9 @@ temp_bd: list[dict] = [
 <h3 id="_7">Модели данных</h3>
 <pre><code class="language-python"># models.py
 class RaceType(str, Enum):
-    director = &quot;director&quot;
-    manager = &quot;manager&quot;
-    accountant = &quot;accountant&quot;
+    director = "director"
+    manager = "manager"
+    accountant = "accountant"
 
 class Profession(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -329,23 +324,23 @@ class Skill(SQLModel, table=True):
     description: str
 
 class SkillWarriorLink(SQLModel, table=True):
-    skill_id: Optional[int] = Field(default=None, foreign_key=&quot;skill.id&quot;), primary_key=True)
-    warrior_id: Optional[int] = Field(default=None, foreign_key=&quot;warrior.id&quot;), primary_key=True)
+    skill_id: Optional[int] = Field(default=None, foreign_key="skill.id"), primary_key=True)
+    warrior_id: Optional[int] = Field(default=None, foreign_key="warrior.id"), primary_key=True)
 
 class Warrior(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     name: str
     race: str
     level: int
-    profession_id: int = Field(foreign_key=&quot;profession.id&quot;)
+    profession_id: int = Field(foreign_key="profession.id")
     profession: Optional[Profession] = Relationship()
-    skills: list[Skill] = Relationship(&quot;Skill&quot;, &quot;SkillWarriorLink&quot;)
+    skills: list[Skill] = Relationship("Skill", "SkillWarriorLink")
 </code></pre>
 <h3 id="_8">Код соединения с БД</h3>
 <pre><code class="language-python"># database.py
 from sqlmodel import SQLModel, create_engine, Session
 
-DATABASE_URL = &quot;sqlite:///warriors.db&quot;
+DATABASE_URL = "sqlite:///warriors.db"
 engine = create_engine(DATABASE_URL, echo=True)
 
 def init_db():
@@ -355,7 +350,7 @@ def get_session():
     with Session(engine) as session:
         yield session
 </code></pre>
-<hr />
+<hr/>
 <h2 id="13-alembic">Практика 1.3 — Alembic миграции</h2>
 <p><strong>Папка</strong>: <a href="students/k3341/Menshenin_Evgenii/prak/pr3/"><code>students/k3341/Menshenin_Evgenii/prak/pr3/</code></a></p>
 <h3 id="_9">Структура</h3>
@@ -368,14 +363,14 @@ def get_session():
 <pre><code class="language-python"># database.py
 from sqlmodel import SQLModel, create_engine, Session
 
-DATABASE_URL = &quot;sqlite:///warriors.db&quot;
+DATABASE_URL = "sqlite:///warriors.db"
 engine = create_engine(DATABASE_URL, echo=True)
 
 def get_session():
     with Session(engine) as session:
         yield session
 </code></pre>
-<hr />
+<hr/>
 <h2 id="1">Лабораторная работа 1 — Система управления хакатонами</h2>
 <p><strong>Папка</strong>: <a href="students/k3341/Menshenin_Evgenii/Lr1/"><code>students/k3341/Menshenin_Evgenii/Lr1/</code></a></p>
 <p>Полноценное REST API для системы управления хакатонами с аутентификацией JWT.</p>
@@ -694,6 +689,91 @@ def get_session():
 </tr>
 </tbody>
 </table>
+<h3 id="erd">Схема базы данных (ERD)</h3>
+<div class="mermaid">erDiagram
+    USER {
+        int id PK
+        string email
+        string full_name
+        string hashed_password
+        string phone
+        string skills
+    }
+
+    HACKATHON {
+        int id PK
+        int organizer_id FK
+        string title
+        string description
+        datetime start_date
+        datetime end_date
+        int max_participants
+        datetime created_at
+    }
+
+    PARTICIPANT {
+        int id PK
+        int user_id FK
+        int hackathon_id FK
+        int team_id FK
+        string role
+        datetime registered_at
+    }
+
+    TEAM {
+        int id PK
+        int hackathon_id FK
+        int creator_id FK
+        string name
+        string description
+        datetime created_at
+    }
+
+    TASK {
+        int id PK
+        int hackathon_id FK
+        string title
+        string description
+        string requirements
+        string criteria
+        int max_score
+    }
+
+    SUBMISSION {
+        int id PK
+        int user_id FK
+        int task_id FK
+        int team_id FK
+        string description
+        string project_link
+        datetime submitted_at
+    }
+
+    EVALUATION {
+        int id PK
+        int submission_id FK
+        int evaluator_id FK
+        int score
+        string comments
+    }
+
+    USER ||--o{ HACKATHON : "organizes"
+    USER ||--o{ PARTICIPANT : "participates as"
+    USER ||--o{ TEAM : "creates"
+    USER ||--o{ SUBMISSION : "submits"
+    USER ||--o{ EVALUATION : "evaluates"
+
+    HACKATHON ||--o{ PARTICIPANT : "has"
+    HACKATHON ||--o{ TEAM : "has"
+    HACKATHON ||--o{ TASK : "has"
+
+    TEAM ||--o{ PARTICIPANT : "contains"
+    TEAM ||--o{ SUBMISSION : "has"
+
+    TASK ||--o{ SUBMISSION : "receives"
+
+    SUBMISSION ||--o{ EVALUATION : "receives"
+</div>
 <h3 id="_12">Модели данных</h3>
 <h4 id="user">User (Пользователь)</h4>
 <pre><code class="language-python"># app/models/user.py
@@ -707,11 +787,11 @@ class User(UserBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     hashed_password: str
 
-    hackathons: list[&quot;Hackathon&quot;] = Relationship(back_populates=&quot;organizer&quot;)
-    participations: list[&quot;Participant&quot;] = Relationship(back_populates=&quot;user&quot;)
-    teams_created: list[&quot;Team&quot;] = Relationship(back_populates=&quot;creator&quot;)
-    submissions: list[&quot;Submission&quot;] = Relationship(back_populates=&quot;user&quot;)
-    evaluations_given: list[&quot;Evaluation&quot;] = Relationship(back_populates=&quot;evaluator&quot;)
+    hackathons: list["Hackathon"] = Relationship(back_populates="organizer")
+    participations: list["Participant"] = Relationship(back_populates="user")
+    teams_created: list["Team"] = Relationship(back_populates="creator")
+    submissions: list["Submission"] = Relationship(back_populates="user")
+    evaluations_given: list["Evaluation"] = Relationship(back_populates="evaluator")
 </code></pre>
 <h4 id="hackathon">Hackathon (Хакатон)</h4>
 <pre><code class="language-python"># app/models/hackathon.py
@@ -724,29 +804,29 @@ class HackathonBase(SQLModel):
 
 class Hackathon(HackathonBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    organizer_id: int = Field(foreign_key=&quot;user.id&quot;)
+    organizer_id: int = Field(foreign_key="user.id")
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
-    organizer: &quot;User&quot; = Relationship(back_populates=&quot;hackathons&quot;)
-    participants: list[&quot;Participant&quot;] = Relationship(back_populates=&quot;hackathon&quot;)
-    tasks: list[&quot;Task&quot;] = Relationship(back_populates=&quot;hackathon&quot;)
-    teams: list[&quot;Team&quot;] = Relationship(back_populates=&quot;hackathon&quot;)
+    organizer: "User" = Relationship(back_populates="hackathons")
+    participants: list["Participant"] = Relationship(back_populates="hackathon")
+    tasks: list["Task"] = Relationship(back_populates="hackathon")
+    teams: list["Team"] = Relationship(back_populates="hackathon")
 </code></pre>
 <h4 id="participant">Participant (Участник)</h4>
 <pre><code class="language-python"># app/models/participant.py
 class ParticipantBase(SQLModel):
-    role: str = Field(description=&quot;Role of the participant in the hackathon&quot;)
+    role: str = Field(description="Role of the participant in the hackathon")
 
 class Participant(ParticipantBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    user_id: int = Field(foreign_key=&quot;user.id&quot;)
-    hackathon_id: int = Field(foreign_key=&quot;hackathon.id&quot;)
+    user_id: int = Field(foreign_key="user.id")
+    hackathon_id: int = Field(foreign_key="hackathon.id")
     registered_at: datetime = Field(default_factory=datetime.utcnow)
-    team_id: Optional[int] = Field(foreign_key=&quot;team.id&quot;, default=None)
+    team_id: Optional[int] = Field(foreign_key="team.id", default=None)
 
-    user: &quot;User&quot; = Relationship(back_populates=&quot;participations&quot;)
-    hackathon: &quot;Hackathon&quot; = Relationship(back_populates=&quot;participants&quot;)
-    team: Optional[&quot;Team&quot;] = Relationship(back_populates=&quot;members&quot;)
+    user: "User" = Relationship(back_populates="participations")
+    hackathon: "Hackathon" = Relationship(back_populates="participants")
+    team: Optional["Team"] = Relationship(back_populates="members")
 </code></pre>
 <h4 id="team">Team (Команда)</h4>
 <pre><code class="language-python"># app/models/team.py
@@ -756,14 +836,14 @@ class TeamBase(SQLModel):
 
 class Team(TeamBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    hackathon_id: int = Field(foreign_key=&quot;hackathon.id&quot;)
-    creator_id: int = Field(foreign_key=&quot;user.id&quot;)
+    hackathon_id: int = Field(foreign_key="hackathon.id")
+    creator_id: int = Field(foreign_key="user.id")
     created_at: datetime = Field(default_factory=datetime.utcnow)
 
-    creator: &quot;User&quot; = Relationship(back_populates=&quot;teams_created&quot;)
-    members: list[&quot;Participant&quot;] = Relationship(back_populates=&quot;team&quot;)
-    hackathon: &quot;Hackathon&quot; = Relationship(back_populates=&quot;teams&quot;)
-    submissions: list[&quot;Submission&quot;] = Relationship(back_populates=&quot;team&quot;)
+    creator: "User" = Relationship(back_populates="teams_created")
+    members: list["Participant"] = Relationship(back_populates="team")
+    hackathon: "Hackathon" = Relationship(back_populates="teams")
+    submissions: list["Submission"] = Relationship(back_populates="team")
 </code></pre>
 <h4 id="task">Task (Задача)</h4>
 <pre><code class="language-python"># app/models/task.py
@@ -776,10 +856,10 @@ class TaskBase(SQLModel):
 
 class Task(TaskBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    hackathon_id: int = Field(foreign_key=&quot;hackathon.id&quot;)
+    hackathon_id: int = Field(foreign_key="hackathon.id")
 
-    hackathon: &quot;Hackathon&quot; = Relationship(back_populates=&quot;tasks&quot;)
-    submissions: list[&quot;Submission&quot;] = Relationship(back_populates=&quot;task&quot;)
+    hackathon: "Hackathon" = Relationship(back_populates="tasks")
+    submissions: list["Submission"] = Relationship(back_populates="task")
 </code></pre>
 <h4 id="submission">Submission</h4>
 <pre><code class="language-python"># app/models/submission.py
@@ -789,15 +869,15 @@ class SubmissionBase(SQLModel):
 
 class Submission(SubmissionBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    user_id: int = Field(foreign_key=&quot;user.id&quot;)
-    task_id: int = Field(foreign_key=&quot;task.id&quot;)
-    team_id: Optional[int] = Field(foreign_key=&quot;team.id&quot;)
+    user_id: int = Field(foreign_key="user.id")
+    task_id: int = Field(foreign_key="task.id")
+    team_id: Optional[int] = Field(foreign_key="team.id")
     submitted_at: datetime = Field(default_factory=datetime.utcnow)
 
-    user: &quot;User&quot; = Relationship(back_populates=&quot;submissions&quot;)
-    task: &quot;Task&quot; = Relationship(back_populates=&quot;submissions&quot;)
-    team: Optional[&quot;Team&quot;] = Relationship(back_populates=&quot;submissions&quot;)
-    evaluations: list[&quot;Evaluation&quot;] = Relationship(back_populates=&quot;submission&quot;)
+    user: "User" = Relationship(back_populates="submissions")
+    task: "Task" = Relationship(back_populates="submissions")
+    team: Optional["Team"] = Relationship(back_populates="submissions")
+    evaluations: list["Evaluation"] = Relationship(back_populates="submission")
 </code></pre>
 <h4 id="evaluation">Evaluation (Оценка)</h4>
 <pre><code class="language-python"># app/models/evaluation.py
@@ -807,11 +887,11 @@ class EvaluationBase(SQLModel):
 
 class Evaluation(EvaluationBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
-    submission_id: int = Field(foreign_key=&quot;submission.id&quot;)
-    evaluator_id: int = Field(foreign_key=&quot;user.id&quot;)
+    submission_id: int = Field(foreign_key="submission.id")
+    evaluator_id: int = Field(foreign_key="user.id")
 
-    submission: &quot;Submission&quot; = Relationship(back_populates=&quot;evaluations&quot;)
-    evaluator: &quot;User&quot; = Relationship(back_populates=&quot;evaluations_given&quot;)
+    submission: "Submission" = Relationship(back_populates="evaluations")
+    evaluator: "User" = Relationship(back_populates="evaluations_given")
 </code></pre>
 <h3 id="_13">Код соединения с БД</h3>
 <pre><code class="language-python"># app/core/database.py
@@ -833,13 +913,13 @@ from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    DATABASE_URL: str = &quot;sqlite:///./hackathon.db&quot;
-    SECRET_KEY: str = &quot;your-secret-key-here&quot;
-    ALGORITHM: str = &quot;HS256&quot;
+    DATABASE_URL: str = "sqlite:///./hackathon.db"
+    SECRET_KEY: str = "your-secret-key-here"
+    ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
     class Config:
-        env_file = &quot;.env&quot;
+        env_file = ".env"
 
 @lru_cache()
 def get_settings():
@@ -859,55 +939,43 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
         expire = datetime.utcnow() + expires_delta
     else:
         expire = datetime.utcnow() + timedelta(minutes=15)
-    to_encode.update({&quot;exp&quot;: expire})
+    to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM)
     return encoded_jwt
 </code></pre>
-              
-            </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href=".." class="btn btn-neutral float-left" title="Главная"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../lab2/" class="btn btn-neutral float-right" title="Лабораторная 2">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href=".." title="Главная"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../lab2/" title="Лабораторная 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../lab2/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href=".." style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../lab2/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "..";</script>
+<script src="../js/theme_extra.js"></script>
+<script src="../js/theme.js"></script>
+<script src="../search/main.js"></script>
+<script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
         });
     </script>
-
-</body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>
