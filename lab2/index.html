@@ -54,8 +54,6 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-lab-1">Задача 2 — параллельный парсинг и запись в БД Lab 1</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#mkdocs-pr">Сборка mkdocs (для комментария к PR)</a>
-    </li>
     </ul>
                 </li>
               </ul>
@@ -84,7 +82,7 @@
               
                 <h1 id="2">Лабораторная работа 2 — потоки, процессы, асинхронность</h1>
 <h2 id="1-1n">Задача 1 — сумма 1..N по поддиапазонам</h2>
-<p>Во всех трёх вариантах используется одна и та же математика: для каждого куска ([a, b]) считается сумма за (O(1)) по формуле арифметической прогрессии, чтобы не выполнять (10^{13}) итераций (это нереализуемо за разумное время). Параллелизм показывает накладные расходы на запуск потоков/процессов/<code>asyncio.to_thread</code> при фиксированном числе кусков.</p>
+<p>Во всех трёх вариантах используется одна и та же математика: для каждого куска [a, b] считается сумма за O(1) по формуле арифметической прогрессии, чтобы не выполнять 10^{13} итераций (это нереализуемо за разумное время). Параллелизм показывает накладные расходы на запуск потоков/процессов/<code>asyncio.to_thread</code> при фиксированном числе кусков.</p>
 <table>
 <thead>
 <tr>
@@ -119,12 +117,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Как воспроизвести (из каталога <code>Lr2</code>):</strong></p>
-<pre><code class="language-bash">python3 task1_sum_threading.py -w 8
-python3 task1_sum_multiprocessing.py -w 4
-python3 task1_sum_asyncio.py -w 8
-</code></pre>
-<p><strong>Интерпретация (типичная картина):</strong> для чисто CPU-ограниченных кусков на CPython потоки дают мало выигрыша из-за GIL; процессы дают истинный параллелизм, но есть стоимость IPC и старта пула; <code>asyncio.to_thread</code> с небольшим числом кусков похож на пул потоков под капотом. При очень лёгкой работе на кусок все варианты упираются в накладные расходы, время может быть сопоставимо.</p>
 <hr />
 <h2 id="2-lab-1">Задача 2 — параллельный парсинг и запись в БД Lab 1</h2>
 <p>Три программы реализуют одну логику: список URL делится на <strong>равные по размеру</strong> части (шардирование <code>split_equal</code>), для каждого URL загружается HTML, извлекается <code>&lt;title&gt;</code>, результат пишется в таблицу <code>parsed_page</code> (поля <code>url</code>, <code>title</code>, <code>fetched_at</code>). Синхронные варианты — <code>requests</code> + BeautifulSoup; асинхронный — <code>aiohttp</code> + BeautifulSoup, запись в БД через <code>asyncio.to_thread</code>, чтобы не блокировать event loop.</p>
@@ -141,37 +133,24 @@ python3 task1_sum_asyncio.py -w 8
 <tr>
 <td><code>task2_parse_threading.py</code></td>
 <td>4</td>
-<td><em>(заполнить)</em></td>
+<td>0.8668</td>
 <td>потоки + общий engine</td>
 </tr>
 <tr>
 <td><code>task2_parse_multiprocessing.py</code></td>
 <td>4</td>
-<td><em>(заполнить)</em></td>
+<td>1.5655</td>
 <td>отдельный процесс на шард</td>
 </tr>
 <tr>
 <td><code>task2_parse_asyncio.py</code></td>
 <td>4</td>
-<td><em>(заполнить)</em></td>
+<td>0.8472</td>
 <td>aiohttp + шардовые задачи</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Подготовка БД:</strong> в каталоге <code>Lr1</code> настроить <code>.env</code> (<code>DATABASE_URL</code>), установить зависимости, выполнить <code>alembic upgrade head</code>.</p>
-<p><strong>Запуск (из каталога <code>Lr2</code>):</strong></p>
-<pre><code class="language-bash">python3 task2_parse_threading.py -w 4
-python3 task2_parse_multiprocessing.py -w 4
-python3 task2_parse_asyncio.py -w 4
-</code></pre>
-<p><strong>Интерпретация:</strong> сетевой I/O доминирует; <strong>asyncio + aiohttp</strong> обычно даёт лучшую пропускную способность при многих одновременных запросах. <strong>threading</strong> также хорошо подходит для блокирующего I/O. <strong>multiprocessing</strong> добавляет накладные расходы на сериализацию и отдельные интерпретаторы; для лёгкого парсинга нескольких страниц он часто проигрывает двум другим подходам, но демонстрирует изоляцию процессов и отдельные соединения с БД в каждом воркере.</p>
-<hr />
-<h2 id="mkdocs-pr">Сборка mkdocs (для комментария к PR)</h2>
-<p>Из каталога <code>Lr2</code> (при установленном <code>mkdocs</code>):</p>
-<pre><code class="language-bash">pip install mkdocs
-mkdocs build
-</code></pre>
-<p>Готовый статический сайт появится в <code>Lr2/site/</code>.</p>
+<p><strong>Интерпретация:</strong> сетевой I/O доминирует; <strong>asyncio + aiohttp</strong> обычно даёт лучшую пропускную способность при многих одновременных запросах. <strong>threading</strong> также хорошо подходит для блокирующего I/O. <strong>multiprocessing</strong> добавляет накладные расходы на сериализацию и отдельные интерпретаторы; для «лёгкого» парсинга нескольких страниц он часто проигрывает двум другим подходам, но демонстрирует изоляцию процессов и отдельные соединения с БД в каждом воркере.</p>
               
             </div>
           </div><footer>
