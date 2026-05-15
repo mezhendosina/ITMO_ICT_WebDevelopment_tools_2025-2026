@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import time
 from multiprocessing import Pool, cpu_count
 
@@ -11,9 +12,9 @@ import l2_db  # noqa: F401
 import requests
 from bs4 import BeautifulSoup
 
-from l2_db import get_engine
+from l2_db import get_async_engine
 from task2_common import DEFAULT_URLS, split_equal
-from task2_persist import persist_parsed
+from task2_persist import persist_parsed_async
 
 
 def _extract_title(html: str) -> str:
@@ -26,14 +27,14 @@ def _extract_title(html: str) -> str:
 
 def parse_and_save(url: str) -> str:
     """Fetch URL, parse <title>, persist row in `parsed_page`, print result."""
-    engine = get_engine()
+    engine = get_async_engine()
     try:
         resp = requests.get(url, timeout=45)
         resp.raise_for_status()
         title = _extract_title(resp.text)
     except Exception as exc:  # noqa: BLE001
         title = f"<error: {exc}>"
-    persist_parsed(engine, url, title)
+    asyncio.run(persist_parsed_async(engine, url, title))
     print(f"{url} -> {title!r}")
     return title
 

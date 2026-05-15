@@ -11,9 +11,9 @@ import aiohttp
 import l2_db  # noqa: F401
 from bs4 import BeautifulSoup
 
-from l2_db import get_engine
+from l2_db import get_async_engine
 from task2_common import DEFAULT_URLS, split_equal
-from task2_persist import persist_parsed
+from task2_persist import persist_parsed_async
 
 _aio_session: contextvars.ContextVar[aiohttp.ClientSession | None] = contextvars.ContextVar(
     "aio_session", default=None
@@ -29,12 +29,12 @@ def _extract_title(html: str) -> str:
 
 
 async def parse_and_save(url: str) -> str:
-    """Fetch URL with aiohttp, parse <title>, persist via sync SQLModel in a thread."""
+    """Fetch URL with aiohttp, parse <title>, persist via async SQLAlchemy."""
     session = _aio_session.get()
     if session is None:
         raise RuntimeError("ClientSession is not bound (internal error).")
 
-    engine = get_engine()
+    engine = get_async_engine()
     try:
         async with session.get(url, timeout=aiohttp.ClientTimeout(total=45)) as resp:
             resp.raise_for_status()
@@ -43,7 +43,7 @@ async def parse_and_save(url: str) -> str:
     except Exception as exc:  # noqa: BLE001
         title = f"<error: {exc}>"
 
-    await asyncio.to_thread(persist_parsed, engine, url, title)
+    await persist_parsed_async(engine, url, title)
     print(f"{url} -> {title!r}")
     return title
 
@@ -56,7 +56,7 @@ async def _run_shard(shard: list[str]) -> None:
 async def _async_main(workers: int) -> float:
     urls = list(DEFAULT_URLS)
     shards = [s for s in split_equal(urls, workers) if s]
-    get_engine()
+    get_async_engine()
 
     t0 = time.perf_counter()
     async with aiohttp.ClientSession() as session:
